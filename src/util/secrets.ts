@@ -15,6 +15,7 @@ export const ENVIRONMENT = process.env.NODE_ENV
 const prod = ENVIRONMENT === 'production' // Anything else is treated as 'dev'
 
 export const JWT_SECRET = process.env['JWT_SECRET'] as string
+export const COOKIE_EXPIRE = process.env['COOKIE_EXPIRE'] as string
 export const MONGODB_URI = process.env['MONGODB_URI'] as string
 // Use this instead if you want to use local mongodb
 // export const MONGODB_URI = (

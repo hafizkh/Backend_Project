@@ -3,13 +3,13 @@ import mongoose, { Document, ObjectId, Schema } from 'mongoose'
 export interface ProductDocument extends Document {
   name: string
   price: number
-  sellerId: ObjectId,
+  sellerId: ObjectId
   images: string[]
   category: ObjectId[]
   reviews: ObjectId[]
 }
 
-const productSchema = new mongoose.Schema({
+const productSchema = new Schema<ProductDocument>({
   name: {
     type: String,
     required: true,
@@ -20,8 +20,8 @@ const productSchema = new mongoose.Schema({
   },
   sellerId: {
     type: Schema.Types.ObjectId,
-    ref: "User"
-},
+    ref: 'User',
+  },
   images: [
     {
       type: String,

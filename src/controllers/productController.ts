@@ -1,4 +1,4 @@
-import { NextFunction, query, Request, Response } from 'express'
+import { NextFunction, Request, Response } from 'express'
 import { BadRequestError } from '../helpers/apiError'
 import Product from '../models/Product'
 
