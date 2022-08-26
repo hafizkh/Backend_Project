@@ -46,7 +46,7 @@ const UserSchema = new Schema<UserDocument>({
   role: {
     type: String,
     enum: ['admin', 'user'],
-    required: true,
+    default: 'user',
   },
   address: [
     {
