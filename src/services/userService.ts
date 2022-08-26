@@ -9,8 +9,8 @@ const findAll = async () => {
   return await User.find()
 }
 
-const findById = async (id: string) => {
-  const foundOne = await User.findById(id)
+const findById = async (userId: string) => {
+  const foundOne = await User.findById(userId)
   if (foundOne) {
     return foundOne
   } else {
@@ -18,8 +18,8 @@ const findById = async (id: string) => {
   }
 }
 
-const updateOne = async (id: string, update: Partial<UserDocument>) => {
-  const foundOne = await User.findByIdAndUpdate(id, update)
+const updateOne = async (userId: string, update: Partial<UserDocument>) => {
+  const foundOne = await User.findByIdAndUpdate(userId, update)
   if (foundOne) {
     return foundOne
   } else {
@@ -27,8 +27,8 @@ const updateOne = async (id: string, update: Partial<UserDocument>) => {
   }
 }
 
-const deleteOne = async (id: string) => {
-  const foundOne = await User.findByIdAndDelete(id)
+const deleteOne = async (userId: string) => {
+  const foundOne = await User.findByIdAndDelete(userId)
   if (foundOne) {
     return foundOne
   } else {

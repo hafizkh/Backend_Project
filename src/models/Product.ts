@@ -3,10 +3,9 @@ import mongoose, { Document, ObjectId, Schema } from 'mongoose'
 export interface ProductDocument extends Document {
   name: string
   price: number
-  sellerId: ObjectId
-  images: string[]
+  user: ObjectId
+  images: string
   category: ObjectId[]
-  reviews: ObjectId[]
 }
 
 const productSchema = new Schema<ProductDocument>({
@@ -18,21 +17,18 @@ const productSchema = new Schema<ProductDocument>({
     type: Number,
     required: true,
   },
-  sellerId: {
+  user: {
     type: Schema.Types.ObjectId,
     ref: 'User',
   },
-  images: [
-    {
-      type: String,
-      required: true,
-    },
-  ],
+  images: {
+    type: String,
+    required: true,
+  },
   category: [
     {
       name: {
         type: String,
-        unique: true,
         required: true,
       },
       image: {
@@ -41,23 +37,6 @@ const productSchema = new Schema<ProductDocument>({
       },
     },
   ],
-  reviews: [
-    {
-      name: {
-        type: String,
-        required: true,
-      },
-      rating: {
-        type: Number,
-        required: true,
-      },
-      comment: {
-        type: String,
-        required: true,
-      },
-    },
-  ],
 })
-
 const Product = mongoose.model<ProductDocument>('Product', productSchema)
 export default Product

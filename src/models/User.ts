@@ -1,8 +1,8 @@
 import mongoose, { Document, ObjectId, Schema } from 'mongoose'
-import { JWT_SECRET } from '../util/secrets'
 import validator from 'validator'
-import Jwt from 'jsonwebtoken'
 import bcrypt from 'bcryptjs'
+
+export type UserRole = 'admin' | 'user'
 
 export interface UserDocument extends Document {
   firstname: string
@@ -11,7 +11,7 @@ export interface UserDocument extends Document {
   email: string
   password: string
   comparePassword(password: string): Promise<boolean>
-  role: string
+  role: UserRole
   address: ObjectId[]
   reviews: ObjectId[]
 }
@@ -45,13 +45,15 @@ const UserSchema = new Schema<UserDocument>({
   },
   role: {
     type: String,
-    default: 'user',
+    enum: ['admin', 'user'],
+    required: true,
   },
   address: [
     {
       type: Schema.Types.ObjectId,
       ref: 'Address',
       required: true,
+      unique: true,
     },
   ],
   reviews: [
@@ -73,7 +75,6 @@ UserSchema.pre<UserDocument>(
     this.password = await bcrypt.hash(this.password, 10)
   }
 )
-
 // Cpmpare Password
 UserSchema.methods.comparePassword = async function (password: string) {
   return await bcrypt.compare(password, this.password)

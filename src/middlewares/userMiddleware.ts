@@ -1,7 +1,5 @@
 import { Request, Response, NextFunction } from 'express'
 import User from '../models/User'
-import Jwt from 'jsonwebtoken'
-import { JWT_SECRET } from '../util/secrets'
 
 import { NotFoundError, UnauthorizedError } from '../helpers/apiError'
 
@@ -18,9 +16,11 @@ const authenticateUser = async (
       req.body = foundUser
       next()
     } else {
-      next(new UnauthorizedError('Wrong Password. Please try again', 401))
+      next(new UnauthorizedError('Wrong Crendentials. Please try again', 401))
     }
   } else {
-    next(new NotFoundError(`User *${email}* not found`, 404))
+    next(new NotFoundError(`Email: ${email} not found`, 404))
   }
 }
+
+export default authenticateUser

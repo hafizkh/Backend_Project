@@ -5,10 +5,9 @@ export interface CategoryDocument extends Document {
   image: string
 }
 
-const CategorySchema = new Schema<CategoryDocument>({
+const CategorySchema = new Schema({
   name: {
     type: String,
-    unique: true,
     required: true,
   },
   image: {

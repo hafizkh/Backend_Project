@@ -1,6 +1,23 @@
 import passport from 'passport'
-import passportLocal from 'passport-local'
+import JwtStrategy, { ExtractJwt } from 'passport-jwt'
 
-import { Request, Response, NextFunction } from 'express'
+import { JWT_SECRET } from '../util/secrets'
 
-const LocalStrategy = passportLocal.Strategy
+passport.serializeUser(function (user, done) {
+  done(null, user)
+})
+
+passport.deserializeUser(function (user: any, done) {
+  done(null, user)
+})
+
+export const jwtStrategy = new JwtStrategy.Strategy(
+  {
+    jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
+    secretOrKey: `${JWT_SECRET}`,
+  },
+  (jwtPayload, done) => {
+    const user = jwtPayload
+    done(null, user)
+  }
+)
