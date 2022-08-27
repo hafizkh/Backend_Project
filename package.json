@@ -78,6 +78,7 @@
   },
   "husky": {
     "hooks": {
+      "node":"16.17.0",
       "pre-commit": "lint-staged"
     }
   },
