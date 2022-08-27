@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "description": "A starting point for Node.js express apps with TypeScript",
   "engines": {
-    "node": "16.x"
+    "node": "16.x",
+    "npm":"8.x"
   },
   "repository": {
     "type": "git",
