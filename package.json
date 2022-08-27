@@ -5,7 +5,7 @@
   "private": true,
   "engines": {
     "node": "16.x",
-    "npm":"8.x"
+    "npm": "8.x"
   },
   "repository": {
     "type": "git",
@@ -30,14 +30,15 @@
     "@types/jsonwebtoken": "^8.3.7",
     "@types/lusca": "^1.7.0",
     "@types/mongodb": "^4.0.7",
-    "@types/validator": "^13.7.5",
+    "@types/mongoose": "^5.11.97",
+    "@types/validator": "^13.7.6",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.20.0",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "dotenv": "^16.0.1",
     "errorhandler": "^1.5.1",
-    "express": "^4.17.1",
+    "express": "^4.18.1",
     "husky": "^4.2.3",
     "jsonwebtoken": "^8.5.1",
     "lint-staged": "^10.0.8",
