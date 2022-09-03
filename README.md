@@ -11,5 +11,4 @@
 
 Nodejs, Express, MongoDB, Typescript
 
-<<<<<<< HEAD
 ## Client deployement
