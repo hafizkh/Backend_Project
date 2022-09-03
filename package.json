@@ -2,10 +2,6 @@
   "name": "express-typescript-starter",
   "version": "0.1.0",
   "description": "A starting point for Node.js express apps with TypeScript",
-  "private": true,
-  "engines": {
-    "node": "16.x"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Microsoft/TypeScript-Node-Starter.git"
@@ -21,11 +17,15 @@
     "watch-test": "npm run test -- --watchAll",
     "lint": "tsc --noEmit && eslint \"**/*.{js,ts}\" --quiet --fix"
   },
+  "engines": {
+    "node": "16.x"
+  },
   "dependencies": {
     "@types/bcryptjs": "^2.4.2",
     "@types/body-parser": "^1.19.2",
     "@types/cookie-parser": "^1.4.3",
     "@types/cors": "^2.8.12",
+    "@types/express-session": "^1.17.5",
     "@types/jsonwebtoken": "^8.3.7",
     "@types/lusca": "^1.7.0",
     "@types/mongodb": "^4.0.7",
@@ -45,6 +45,7 @@
     "lusca": "^1.7.0",
     "mongodb": "^4.9.0",
     "mongodb-memory-server": "^6.3.1",
+    "mongodb-typescript": "^3.0.0",
     "mongoose": "^6.5.2",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
@@ -60,7 +61,7 @@
     "@types/jest": "^24.9.1",
     "@types/lodash": "^4.14.149",
     "@types/mocha": "^9.1.1",
-    "@types/node": "^12.12.28",
+    "@types/node": "^12.20.55",
     "@types/node-sass": "^4.11.0",
     "@types/nodemailer": "^6.4.0",
     "@types/passport": "^1.0.2",
@@ -91,14 +92,5 @@
   },
   "jest": {
     "testEnvironment": "node"
-  },
-  "bugs": {
-    "url": "https://github.com/Microsoft/TypeScript-Node-Starter/issues"
-  },
-  "homepage": "https://github.com/Microsoft/TypeScript-Node-Starter#readme",
-  "main": ".prettierrc.js",
-  "directories": {
-    "test": "test"
-  },
-  "keywords": []
+  }
 }
