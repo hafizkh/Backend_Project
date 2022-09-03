@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/TypeScript-Node-Starter"
+    "url": "git+https://github.com/Microsoft/TypeScript-Node-Starter.git"
   },
   "author": "Bowden Kelly",
   "license": "MIT",
@@ -91,5 +91,14 @@
   },
   "jest": {
     "testEnvironment": "node"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/Microsoft/TypeScript-Node-Starter/issues"
+  },
+  "homepage": "https://github.com/Microsoft/TypeScript-Node-Starter#readme",
+  "main": ".prettierrc.js",
+  "directories": {
+    "test": "test"
+  },
+  "keywords": []
 }
