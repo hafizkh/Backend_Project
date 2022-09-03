@@ -11,12 +11,18 @@ import user from './routers/userRoute'
 import order from './routers/orderRoute'
 import userReviewRoute from './routers/userReviewRoute'
 import cors from 'cors'
+import passport, { session } from 'passport'
+import { jwtStrategy } from './config/passport'
 
 dotenv.config({ path: '.env' })
 const app = express()
 
 // Express configuration
 app.set('port', process.env.PORT || 3000)
+
+app.use(passport.initialize())
+app.use(passport.session())
+passport.use(jwtStrategy)
 
 // Global middleware
 app.use(apiContentType)
