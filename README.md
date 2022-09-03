@@ -1,6 +1,5 @@
-<<<<<<< HEAD
 # Fullstack Project
-=======
+
 # Backend_Project
 
 ## API deployement
