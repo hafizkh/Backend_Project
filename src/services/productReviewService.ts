@@ -1,5 +1,5 @@
 import { NotFoundError } from '../helpers/apiError'
-import ProductReview, { ProductReviewDocument } from '../models/ProductReview'
+import ProductReview, { ProductReviewDocument } from '../models/productReview'
 
 const createOne = async (productReview: ProductReviewDocument) => {
   return await productReview.save()
