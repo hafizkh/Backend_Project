@@ -4,7 +4,7 @@
 
 ## API deployement
 
-[Backend API](https://hyper-api-backend.herokuapp.com/)
+[Backend API](https://backend-api-hyper.herokuapp.com/api/v1/)
 
 ## Techstack 
 
