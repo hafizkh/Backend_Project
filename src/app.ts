@@ -21,8 +21,10 @@ const app = express()
 // Express configuration
 app.set('port', process.env.PORT || 3000)
 
+/// Passport configuration
+
 app.use(passport.initialize())
-app.use(passport.session())
+// app.use(passport.session())
 passport.use(jwtStrategy)
 
 // Global middleware
