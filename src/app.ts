@@ -33,7 +33,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(cors())
 
 // Set up routers
-app.use('api/v1', homeRoute)
+app.use('/api/v1', homeRoute)
 app.use('/api/v1/products', product)
 app.use('/api/v1/users', user)
 app.use('/api/v1/orders', order)
