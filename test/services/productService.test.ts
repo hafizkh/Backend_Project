@@ -1,5 +1,5 @@
 import { MongodHelper } from '../../test/db-helper'
-import connect from '../../test/db-helper'
+import connect from '../db-helper'
 import Product from '../../src/models/Product'
 import {product1,product2,product3,product4} from '../../test/fixtures/product'
 import productService from '../../src/services/productServices'

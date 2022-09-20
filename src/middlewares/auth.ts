@@ -23,7 +23,7 @@ const verifyAdmin = (req: Request, res: Response, next: NextFunction) => {
     const auth = req.headers.authorization || ''
     const token = auth.split(' ')[1]
     const user = Jwt.verify(token, JWT_SECRET)
-    // console.log("USer",user)
+    console.log('USer', user)
     next()
   } catch (error) {
     console.log('error:', error)

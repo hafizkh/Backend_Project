@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from 'express'
-import userReviewService from '../../src/services/userReviewService'
-import UserReview from '../../src/models/UserReview'
-import { BadRequestError } from '../../src/helpers/apiError'
+import userReviewService from '../services/userReviewService'
+import UserReview from '../models/UserReview'
+import { BadRequestError } from '../helpers/apiError'
 
 // To get all userReviews
 const findAll = async (req: Request, res: Response, next: NextFunction) => {
