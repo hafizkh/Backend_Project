@@ -46,6 +46,7 @@ const UserSchema = new Schema<UserDocument>({
   role: {
     type: String,
     enum: ['admin', 'user'],
+    default: 'user',
   },
   address: [
     {
@@ -74,7 +75,7 @@ UserSchema.pre<UserDocument>(
     this.password = await bcrypt.hash(this.password, 10)
   }
 )
-// Cpmpare Password
+// Compare Password
 UserSchema.methods.comparePassword = async function (password: string) {
   return await bcrypt.compare(password, this.password)
 }

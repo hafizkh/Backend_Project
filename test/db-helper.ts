@@ -4,7 +4,6 @@ import { MongoMemoryServer } from 'mongodb-memory-server'
 const connect = async () => {
   const mongod = await MongoMemoryServer.create()
   const uri = await mongod.getUri()
-
   // const mongooseOpts: ConnectOptions = {
   //   useNewUrlParser: true,
   //   useUnifiedTopology: true,

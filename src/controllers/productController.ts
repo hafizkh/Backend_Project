@@ -48,7 +48,11 @@ const getAllProducts = async (
   next: NextFunction
 ) => {
   try {
-    res.json(await productServices.findAll(0, 5, 'category'))
+    const products = await productServices.findAll(0, 5, 'category')
+    res.status(200).json({
+      success: true,
+      'All Products': products,
+    })
   } catch (error) {
     if (error instanceof Error && error.name == 'ValidationError') {
       next(new BadRequestError('Invalid Request', error))
